@@ -8,7 +8,7 @@ workflows:
           cd ios && pod install && cd ..
       - name: Build Android
         script: |
-          npx react-native run-android --variant=release
+          npx react-native run-android
       - name: Build iOS
         script: |
           npx react-native run-ios --configuration Release --device
