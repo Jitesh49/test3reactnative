@@ -9,9 +9,5 @@ workflows:
       - name: Build iOS
         script: |
           npx react-native run-ios 
-      - name: Build iOS unsigned      
-        script: |
-           xcodebuild build -project "test3reactnative.xcodeproj" \
-          -scheme "xcschemes" \CODE_SIGN_INDENTITY="" \CODE_SIGNING_REQUIRED=NO \CODE_SIGNING_ALLOWED=NO    
-       - name: Build iOS signed      
-          script: xcode-project build-ipa --project "MyXcodeProject.xcodeproj" --scheme "xcschemes"
+      - name: Build iOS signed      
+        script: xcode-project build-ipa --project "ios/test3reactnative.xcodeproj" --scheme "xcschemes"
