@@ -11,6 +11,5 @@ workflows:
           npx react-native run-ios 
       - name: Build iOS IPA
         script: |
-          npx react-native run-ios --configuration Release --device
-          xcodebuild -workspace test3reactnative.xcworkspace -scheme test3reactnative -configuration Release -archivePath build/test3reactnative.xcarchive archive
-          xcodebuild -exportArchive -archivePath build/test3reactnative.xcarchive -exportPath build -exportOptionsPlist ExportOptions.plist
+         xcodebuild -workspace path/to/your/test3reactnative.xcworkspace -scheme test3reactnative -archivePath build/test3reactnative.xcarchive archive
+          xcodebuild -exportArchive -archivePath build/test3reactnative.xcarchive -exportPath build -exportOptionsPlist path/to/your/ExportOptions.plist
