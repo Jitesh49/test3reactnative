@@ -10,4 +10,4 @@ workflows:
         script: |
           npx react-native run-ios 
       - name: Build iOS signed      
-        script: xcode-project build-ipa --project "ios/test3reactnative.xcodeproj" --scheme "xcschemes"
+        script: xcode-project build-ipa --project "test3reactnative.xcodeproj" --scheme "xcschemes"
