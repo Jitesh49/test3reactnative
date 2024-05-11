@@ -8,6 +8,6 @@ workflows:
           cd ios && pod install && cd ..
       - name: Build iOS
         script: |
-          npx react-native run-ios --configuration Release
+          npx react-native run-ios 
 
      
