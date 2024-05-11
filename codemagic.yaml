@@ -12,7 +12,7 @@ workflows:
       - name: Generate IPA
         script: |
           # Archive the app
-          xcodebuild -workspace ios/test3reactnative -scheme YourApp -configuration Release -archivePath bios/test3reactnative.xcodeproj archive
+          xcodebuild -workspace ios/test3reactnative -scheme test3reactnative -configuration Release -archivePath bios/test3reactnative.xcodeproj archive
           # Export the IPA
           xcodebuild -exportArchive -archivePathios/test3reactnative.xcodeproj -exportOptionsPlist ios/exportOptions.plist -exportPath .
           # Move the IPA file to a desired location
