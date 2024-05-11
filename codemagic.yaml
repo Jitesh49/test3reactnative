@@ -10,5 +10,6 @@ workflows:
         script: |
           npx react-native run-ios 
       - name: Build iOS signed      
-        script: xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -configuration Release -archivePath build/YourApp.xcarchive archive
-          xcodebuild -exportArchive -archivePath build/YourApp.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build
+        script: xcodebuild -workspace test3reactnative
+ -scheme YourScheme -configuration Release -archivePath build/test3reactnative.xcarchive archive
+          xcodebuild -exportArchive -archivePath build/test3reactnative.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build
