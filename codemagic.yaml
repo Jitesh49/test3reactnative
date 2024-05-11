@@ -10,4 +10,5 @@ workflows:
         script: |
           npx react-native run-ios 
       - name: Build iOS signed      
-        script: test3reactnative build-ipa --project "ios/test3reactnative.xcodeproj" --scheme "ios/test3reactnative.xcodeproj/xcshareddata/xcschemes"
+        script: xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme -configuration Release -archivePath build/YourApp.xcarchive archive
+          xcodebuild -exportArchive -archivePath build/YourApp.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build
