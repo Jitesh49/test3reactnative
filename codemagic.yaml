@@ -8,12 +8,6 @@ workflows:
           cd ios && pod install && cd ..
       - name: Build iOS
         script: |
-          npx react-native run-ios 
-      - name: Generate IPA
-        script: |
-          # Archive the app
-          xcodebuild -workspace ios/test3reactnative -scheme test3reactnative -configuration Release -archivePath bios/test3reactnative.xcodeproj archive
-          # Export the IPA
-          xcodebuild -exportArchive -archivePathios/test3reactnative.xcodeproj -exportOptionsPlist ios/exportOptions.plist -exportPath .
-          # Move the IPA file to a desired location
-          mv test3reactnative.ipa $CM_BUILD_DIR
+          react-native run-ios --configuration Release
+
+     
