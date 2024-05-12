@@ -9,9 +9,8 @@ workflows:
           npm install
       - name: Build IPA
         script: |
-          cd ios
-          xcodebuild -workspace test3reactnative.xcworkspace -scheme test3reactnative -configuration Release clean archive -archivePath build/test3reactnative.xcarchive
-          xcodebuild -exportArchive -archivePath build/test3reactnative.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build
+          xcodebuild -project ios/test3reactnative.xcodeproj -scheme test3reactnative -configuration Release clean archive -archivePath build/test3reactnative.xcarchive
+          xcodebuild -exportArchive -archivePath build/test3reactnative.xcarchive -exportPath build
       - name: Download IPA
         script: |
           curl -o test3reactnative.ipa https://api.codemagic.io/artifacts/download/66412d7e304fb696e70f7e58/test3reactnative.ipa?branch=master
