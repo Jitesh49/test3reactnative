@@ -9,9 +9,7 @@ workflows:
       - name: Build iOS
         script: |
           npx react-native run-ios 
-
-  build:
-    name: Build IPA
+     name: Build IPA
     environment:
       xcode: latest
     scripts:
