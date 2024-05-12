@@ -1,15 +1,6 @@
 workflows:
-  react_native_build:
-    name: React Native Build
-    scripts:
-      - name: Install dependencies
-        script: |
-          npm install
-          cd ios && pod install && cd ..
-      - name: Build iOS
-        script: |
-          npx react-native run-ios 
-     name: Build IPA
+  build:
+    name: Build IPA
     environment:
       xcode: latest
     scripts:
@@ -19,7 +10,7 @@ workflows:
       - name: Build IPA
         script: |
           cd ios
-          xcodebuild -workspace test3reactnative.xcworkspace -scheme YourSchemeName -configuration Release clean archive -archivePath build/test3reactnative.xcarchive
+          xcodebuild -workspace test3reactnative.xcworkspace -scheme test3reactnative -configuration Release clean archive -archivePath build/test3reactnative.xcarchive
           xcodebuild -exportArchive -archivePath build/test3reactnative.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build
       - name: Download IPA
         script: |
