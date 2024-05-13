@@ -12,13 +12,7 @@ workflows:
         script: | 
           pod install
       - name: Build unsigned IPA
-        script: | 
-          xcodebuild -workspace test3reactnative
- -scheme test3reactnative
- -configuration Release clean archive -archivePath build/test3reactnative
-.xcarchive
-          xcodebuild -exportArchive -archivePath build/test3reactnative
-.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build
+       
     artifacts:
       - build/*.ipa
       - /tmp/xcodebuild_logs/*.log
