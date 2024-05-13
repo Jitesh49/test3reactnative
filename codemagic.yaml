@@ -1,28 +1,5 @@
 workflows:
-  ios-native-unsigned-ipa:
-    name: iOS Native Unsigned IPA
-    max_build_duration: 120
-    instance_type: mac_mini_m1
-    environment:
-      vars:
-        XCODE_WORKSPACE: "CodemagicSample.xcworkspace"
-        XCODE_SCHEME: "CodemagicSample"
-    scripts:
-      - name: Install CocoaPods dependencies
-        script: | 
-          pod install
-      - name: Build unsigned IPA
-       
-    artifacts:
-      - build/*.ipa
-      - /tmp/xcodebuild_logs/*.log
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
-    publishing:
-      email:
-        recipients:
-          - user_1@example.com
-          - user_2@example.com
-        notify:
-          success: true
-          failure: false
+    sample-workflow:
+        name: Codemagic Sample Workflow
+        max_build_duration: 120
+        instance_type: mac_mini_m1
